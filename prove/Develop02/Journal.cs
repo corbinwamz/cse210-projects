@@ -64,7 +64,7 @@ public class Journal
             {
                 File.AppendAllText(file, "_dateTime,_prompt,_entries\n");
             }
-                var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+                CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
                 {
                     HasHeaderRecord = false,
                 };
@@ -72,9 +72,9 @@ public class Journal
                 {
                 records.Add(new Entry { _dateTime = $"{line[0]}", _prompt = $"{line[1]}", _entries = $"{line[2]}" });
                 }
-                using (var stream = File.Open($"{file}", FileMode.Append))
-                using (var writer = new StreamWriter(stream))
-                using (var csv = new CsvWriter(writer, config))
+                using (FileStream stream = File.Open($"{file}", FileMode.Append))
+                using (StreamWriter writer = new StreamWriter(stream))
+                using (CsvWriter csv = new CsvWriter(writer, config))
                 {
                     csv.WriteRecords(records);
                 }
@@ -149,10 +149,10 @@ public class Journal
         }
         else
         {
-            using (var reader = new StreamReader($"..\\Develop02\\{file}"))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (StreamReader reader = new StreamReader($"..\\Develop02\\{file}"))
+            using (CsvReader csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                var info = csv.GetRecords<Entry>().ToList();
+                List<Entry> info = csv.GetRecords<Entry>().ToList();
 
                 foreach (Entry line in info)
                 {
