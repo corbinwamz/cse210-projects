@@ -26,13 +26,13 @@ class Scripture
         for (int i = 0; i < length; i++)
         {
             bool inList = true;
-            int number = random.Next(0, 42);
+            int number = random.Next(0, length);
             while (inList == true)
             {
                 if (listOfNumbers.Contains(number))
                 {
                     inList = true;
-                    number = random.Next(0, 42);
+                    number = random.Next(0, length);
                 }
                 else
                 {
@@ -52,13 +52,14 @@ class Scripture
         }
     }
 
-    public void Menu()
+    public void Menu(Reference scriptureRef)
     {
         string input = "";
         int index = 0;
         int wordsHidden = 0;
 
         List<Word> scripture = GetList();
+        int scriptureLength = scripture.Count;
         Display(scripture);
 
         List<int> listOfNumbers = RandomGenerator(scripture);
@@ -69,12 +70,24 @@ class Scripture
         {
             Console.WriteLine("\n\nPress enter or type 'quit' to finish");
             input = Console.ReadLine();
+            if (input == "quit")
+            {
+                break;
+            }
+            Console.Clear();
             index = Hide(scripture, listOfNumbers, index);
             index = Hide(scripture, listOfNumbers, index);
+            scriptureRef.Display();
             Display(scripture);
             wordsHidden += 2;
             if (r == 1 && wordsHidden == (length - 1))
             {
+                Console.WriteLine("\n\nPress enter or type 'quit' to finish");
+                input = Console.ReadLine();
+                if (input == "quit")
+                {
+                    break;
+                }
                 index = Hide(scripture, listOfNumbers, index);
                 input = "quit";
             }
