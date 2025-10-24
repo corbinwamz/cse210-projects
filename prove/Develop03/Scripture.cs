@@ -6,12 +6,12 @@ class Scripture
 {
     private List<Word> _listOfWords;
 
-    public List<Word> GetList()
+    public List<Word> GetList() // getter
     {
         return _listOfWords;
     }
 
-    public Scripture(List<Word> scripture)
+    public Scripture(List<Word> scripture) // constructor
     {
         _listOfWords = scripture;
     }
