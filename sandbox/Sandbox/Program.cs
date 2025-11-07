@@ -57,17 +57,21 @@
 // //     public string Name { get; set; }
 // // }
 
-Console.Write(new string("|"));
-Console.SetCursorPosition(0, Console.CursorTop);
+// Console.Write(new string("|"));
+// Console.SetCursorPosition(0, Console.CursorTop);
+// Thread.Sleep(250);
+// Console.Write(new string("/"));
+// Console.SetCursorPosition(0, Console.CursorTop);                
+// Thread.Sleep(250);
+// Console.Write(new string("-"));
+// Console.SetCursorPosition(0, Console.CursorTop);                
+// Thread.Sleep(250);
+// Console.Write(new string("\\"));
+// Console.SetCursorPosition(0, Console.CursorTop);                
+// Thread.Sleep(250);
+// Console.Write(new string("|"));
+// Console.SetCursorPosition(0, Console.CursorTop);
+Console.Write("3");
 Thread.Sleep(1000);
-Console.Write(new string("/"));
-Console.SetCursorPosition(0, Console.CursorTop);                
-Thread.Sleep(1000);
-Console.Write(new string("-"));
-Console.SetCursorPosition(0, Console.CursorTop);                
-Thread.Sleep(1000);
-Console.Write(new string("\\"));
-Console.SetCursorPosition(0, Console.CursorTop);                
-Thread.Sleep(1000);
-Console.Write(new string("|"));
-Console.SetCursorPosition(0, Console.CursorTop);
+Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+Console.Write("2");
