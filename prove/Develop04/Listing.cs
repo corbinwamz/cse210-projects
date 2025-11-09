@@ -41,9 +41,10 @@ class Listing : Activity
         Console.Write("\b \b");
         Console.Write(" ");
         Console.WriteLine("\nList as many responses you can to the following prompt:");
-        Console.WriteLine($"\n--- {prompt} ---");
-        Console.Write("\nYou may begin in: 5");
+        Console.WriteLine($"--- {prompt} ---");
+        Console.Write("You may begin in: 5");
         Counter(5);
+        Console.Write("\n");
 
         DateTime startTime = DateTime.Now;
         double i = double.Parse(input);
@@ -51,7 +52,7 @@ class Listing : Activity
 
         while (startTime < futureTime)
         {
-            Console.Write("\n> ");
+            Console.Write("> ");
             string response = Console.ReadLine();
 
             List<string> responses = this.GetResponse();

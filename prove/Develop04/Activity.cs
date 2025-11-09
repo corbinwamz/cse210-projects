@@ -150,11 +150,11 @@ class Activity
         string name = this.GetName();
         this.TimesPerformed(name);
         int timesPerformed = this.GetTimesPerformed();
-        Console.WriteLine("\n\nWell done!!");
+        Console.WriteLine("\nWell done!!");
         Spinner();
         Console.Write("\b \b");
         Console.Write(" ");
-        Console.WriteLine($"\n\nYou have completed another {input} seconds of the {name} Activity with a total of {timesPerformed} iterations.");
+        Console.WriteLine($"\nYou have completed another {input} seconds of the {name} Activity with a total of {timesPerformed} iterations.");
         Spinner();
         Console.Clear();
     }
