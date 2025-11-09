@@ -9,7 +9,6 @@ class Breath : Activity
         _durationOut = durationOut;
     }
 
-
     public void Display(string input)
     {
         Console.WriteLine("Get ready...");
