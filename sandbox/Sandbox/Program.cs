@@ -71,7 +71,18 @@
 // Thread.Sleep(250);
 // Console.Write(new string("|"));
 // Console.SetCursorPosition(0, Console.CursorTop);
-Console.Write("3");
-Thread.Sleep(1000);
-Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
-Console.Write("2");
+// Console.Write("3");
+// Thread.Sleep(1000);
+// Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+// Console.Write("2");
+string path = "example.txt";
+string content = "Hello, world!";
+
+if (!File.Exists(path))
+{
+    File.WriteAllText(path, content);
+}
+else
+{
+    Console.WriteLine("File already exists. Not overwriting.");
+}
