@@ -33,12 +33,14 @@ class Program
                         "   1. Simple Goal\n"+
                         "   2. Eternal Goal\n"+
                         "   3. Checklist Goal\n"+
+                        "   4. Negative Goal\n"+
                         "Which type of goal would you like to create? "
                     );
                     input = Console.ReadLine();
                     SimpleGoal goal = new();
                     SimpleGoal goal2 = new Eternal();
                     SimpleGoal goal1 = new Checklist();
+                    SimpleGoal goal3 = new NegativeGoal();
                     if (input == "1")
                     { 
                         goal.CreateGoal(simpleGoals);
@@ -47,9 +49,13 @@ class Program
                     {
                         goal2.CreateGoal(simpleGoals);
                     }
-                    else
+                    else if (input == "3")
                     {
                         goal1.CreateGoal(simpleGoals);
+                    }
+                    else
+                    {
+                        goal3.CreateGoal(simpleGoals);
                     }
                 }
                 else if (input == "2")
@@ -107,12 +113,18 @@ class Program
                     {                        
                         outputFile.WriteLine($"{complete},{name},{desc},{points},{goalType}");
                     }
-                    else
+                    else if (goalType == "checklist")
                     {
                         int timesCompleted = goal.GetTimesC();
                         int timesRequired = goal.GetTimesR();
                         int bonus = goal.GetBonus();
                         outputFile.WriteLine($"{complete},{name},{desc},{points},{goalType},{timesCompleted},{timesRequired},{bonus}");
+                    }
+                    else
+                    {
+                        int timesAllowed = goal.GetTimesAllowed();
+                        int timesDone = goal.GetTimesDone();
+                        outputFile.WriteLine($"{complete},{name},{desc},{points},{goalType},{timesAllowed},{timesDone}");
                     }
                 }
             }
@@ -161,6 +173,15 @@ class Program
                     string b = items[7];
                     int bonus = int.Parse(b);
                     SimpleGoal goal = new Checklist(timesCompleted, timesReq, bonus, name, desc, points, complete, goalType);
+                    goals.Add(goal);
+                }
+                else
+                {
+                    string q = items[5];
+                    int timesAllowed = int.Parse(q);
+                    string p = items[6];
+                    int timesDone = int.Parse(p);
+                    SimpleGoal goal = new NegativeGoal(timesAllowed, timesDone, name, desc, points, complete, goalType);
                     goals.Add(goal);
                 }
             }

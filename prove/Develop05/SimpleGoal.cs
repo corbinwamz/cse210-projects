@@ -75,6 +75,16 @@ class SimpleGoal
         int i = 0;
         return i;
     }
+    public virtual int GetTimesDone()
+    {
+        int i = 0;
+        return i;
+    }
+    public virtual int GetTimesAllowed()
+    {
+        int i = 0;
+        return i;
+    }
 
     public virtual List<SimpleGoal> CreateGoal(List<SimpleGoal> simpleGoals)
     {
