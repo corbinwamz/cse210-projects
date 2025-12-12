@@ -1,0 +1,3 @@
+dailytask|brush teeth|False|12/10/2025 3:50:57 PM
+listtask|kiwi|False|listtask apple True,listtask banana False,listtask kiwi False,
+numbertask|do dishes|True|3|2

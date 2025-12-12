@@ -1,23 +1,15 @@
 class Entry : Journal
 {
-    private string _entryNum;
     private string _entry;
-    private string _dateTime;
+    private  string _dateTime;
 
     public Entry()
-    {
-        
+    {   
     }
-    public Entry(string entryNum, string entry, string dateTime, string filename) : base(filename) // constructor
+    public Entry(string entry, string dateTime, string filename) : base(filename) // constructor
     {
-        _entryNum = entryNum;
         _entry = entry;
         _dateTime = dateTime;
-    }
-
-    public override string GetEntryNum() // getter
-    {
-        return _entryNum;
     }
 
     public override string GetEntry() // getter
