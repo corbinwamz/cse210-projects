@@ -122,6 +122,7 @@ class Habit
         while (input == "1" || input == "2" || input == "3" || input == "4")
         {
             Console.Clear();
+            Console.Clear();
             List<Habit> habits = newHabit.GetHabits();
             if (habits.Count() == 0)
             {

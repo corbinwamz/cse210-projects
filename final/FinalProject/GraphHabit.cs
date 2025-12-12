@@ -24,14 +24,12 @@ class GraphHabit : Habit
 
     public void DisplayGraph(List<Habit> habits)
     {
-        // 1. Get all the data we need
         List<DateTime> weekDates = DatesThisWeek();
         DateTime today = DateTime.Today;
 
         Console.Clear();
         Console.WriteLine("\n--- Weekly Progress Graph ---\n");
 
-        // 2. Assign Colors
         ConsoleColor[] palette = {
             ConsoleColor.Cyan, ConsoleColor.Magenta, ConsoleColor.Yellow,
             ConsoleColor.Green, ConsoleColor.Red, ConsoleColor.Blue,
@@ -45,10 +43,8 @@ class GraphHabit : Habit
             habitColors[habits[i].GetHabit()] = palette[i % palette.Length];
         }
 
-        // Track which habits actually appear on the graph (have colors)
         HashSet<string> graphedHabits = new HashSet<string>();
 
-        // 3. Loop through every day of the current week
         foreach (DateTime day in weekDates)
         {
             Console.Write($"{day.DayOfWeek.ToString().PadRight(10)} | ");
@@ -70,22 +66,16 @@ class GraphHabit : Habit
                 {
                     dueOnThisDay.Add(habit);
 
-                    // --- CHANGE IS HERE ---
-                    // We do NOT add to 'graphedHabits' here anymore.
-                    // We wait to see if it was actually done.
-
                     List<DateTime> daysDone = GetWeeklyHabitsDone(habit);
                     if (daysDone.Contains(day))
                     {
                         completedOnThisDay.Add(habit);
                         
-                        // Add to Key ONLY if it was completed (so a color block will draw)
                         graphedHabits.Add(habit.GetHabit()); 
                     }
                 }
             }
 
-            // Draw the Bar
             if (dueOnThisDay.Count == 0)
             {
                 Console.ForegroundColor = ConsoleColor.DarkGray;
@@ -127,11 +117,9 @@ class GraphHabit : Habit
 
         Console.WriteLine("-----------------------------");
 
-        // 4. Print the Key
         Console.WriteLine("Key:");
         foreach (var kvp in habitColors)
         {
-            // Only print if we actually drew a color block for this habit
             if (graphedHabits.Contains(kvp.Key))
             {
                 Console.ForegroundColor = kvp.Value;

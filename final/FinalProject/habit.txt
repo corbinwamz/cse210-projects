@@ -1,4 +1,4 @@
-make bed|make my bed every day|daily|12/12/2025 12:00:00 AM|12/12/2025 12:00:00 AM,
-brush my teeth|brush my teeth|daily|12/12/2025 12:00:00 AM|12/12/2025 12:00:00 AM,
-eat breakfast|eat|daily|12/12/2025 12:00:00 AM|12/12/2025 12:00:00 AM,
-make lunch|eat food|daily|12/12/2025 12:00:00 AM|
+Run 5k|Cardio|everyotherday|12/7/2025 12:00:00 AM|12/7/2025 12:00:00 AM,12/11/2025 12:00:00 AM,
+Clean Room|Tidy up|weekly|1/1/2025 12:00:00 AM|12/10/2025 12:00:00 AM,
+Pay Bills|Utilities|monthly|1/12/2025 12:00:00 AM|12/12/2025 12:00:00 AM,
+Read Book|10 pages|daily|1/1/2025 12:00:00 AM|12/11/2025 12:00:00 AM,12/12/2025 12:00:00 AM,
