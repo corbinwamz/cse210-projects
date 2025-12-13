@@ -1,26 +1,7 @@
 class GraphHabit : Habit
 {
-    private List<DateTime> _daysDue;
-    private List<DateTime> _daysDone;
-
-    public GraphHabit(List<DateTime> daysDue, List<DateTime> daysDone, string habit, string desc, List<DateTime> dayComplete, string frequency, DateTime dateCreated) : base(habit, desc, dayComplete, frequency, dateCreated)
-    {
-       _daysDue = daysDue;
-       _daysDone = daysDone; 
-    }
-
     public GraphHabit()
     {}
-
-    public List<DateTime> GetDaysDue()
-    {
-        return _daysDue;
-    }
-
-    public List<DateTime> GetDaysDone()
-    {
-        return _daysDone;
-    }
 
     public void DisplayGraph(List<Habit> habits)
     {
